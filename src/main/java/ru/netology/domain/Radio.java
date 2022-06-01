@@ -4,7 +4,7 @@ public class Radio {
     private int numberStation;
 
     // методы для станций
-    public void setNumberStation(int numberStation){
+    public void setNumberStation(int numberStation) {
         if (numberStation > 9) {
             numberStation = 0;
         }
@@ -14,13 +14,16 @@ public class Radio {
 
         this.numberStation = numberStation;
     }
-    public int getNumberStation(){
+
+    public int getNumberStation() {
         return numberStation;
     }
-    public void nextStation(){
+
+    public void nextStation() {
         int stationUp = numberStation + 1;
         setNumberStation(stationUp);
     }
+
     public void prevStation() {
         int stationPrev = numberStation - 1;
         setNumberStation(stationPrev);
@@ -30,7 +33,7 @@ public class Radio {
 
     // Методы для громкости
 
-    public void setVolume(int volume){
+    public void setVolume(int volume) {
         if (volume > 10) {
             volume = 10;
         }
@@ -40,10 +43,12 @@ public class Radio {
 
         this.volume = volume;
     }
-    public int getVolume(){
+
+    public int getVolume() {
         return volume;
 
     }
+
     public void increaseVolume() {
         if (volume < 10) {
             int volumeUp = volume + 1;
@@ -52,7 +57,7 @@ public class Radio {
     }
 
     public void deIncreaseVolume() {
-        int volumeDown  = volume - 1;
+        int volumeDown = volume - 1;
         setVolume(volumeDown);
     }
 

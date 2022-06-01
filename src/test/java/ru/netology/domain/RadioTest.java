@@ -74,6 +74,7 @@ public class RadioTest {
         radio.increaseVolume();
         assertEquals(10, radio.getVolume());
     }
+
     @Test
     void shouldNothingMoreThanTheMaximum1() { // Больше максимума
         Radio radio = new Radio();
@@ -95,7 +96,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setVolume(4);
         radio.increaseVolume();
-        assertEquals(5,radio.getVolume());
+        assertEquals(5, radio.getVolume());
     }
 
     @Test
@@ -103,7 +104,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setVolume(7);
         radio.deIncreaseVolume();
-        assertEquals(6,radio.getVolume());
+        assertEquals(6, radio.getVolume());
     }
 }
 
