@@ -1,7 +1,14 @@
 package ru.netology.domain;
 
 public class Radio {
+
+    private int minStation;
+    private int maxStation = 9;
     private int numberStation;
+    private int volume;
+    private int minVolume;
+    private int maxVolume = 10;
+
 
     // методы для станций
     public void setNumberStation(int numberStation) {
@@ -29,7 +36,7 @@ public class Radio {
         setNumberStation(stationPrev);
     }
 
-    private int volume;
+
 
     // Методы для громкости
 
