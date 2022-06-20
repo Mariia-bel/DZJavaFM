@@ -4,7 +4,7 @@ public class Radio {
     private int numberStation;
     private int volume;
     private int quantityStation = 10;
-    private int minStation = 0;
+    private int minStation;
     private int maxStation = 9;
     private int minVolume;
     private int maxVolume = 100;
@@ -16,13 +16,21 @@ public class Radio {
         this.quantityStation = quantityStation;
     }
 
+    public int getQuantityStation() {
+        return quantityStation;
+    }
+
+    public void setQuantityStation(int quantityStation) {
+        this.quantityStation = quantityStation;
+    }
+
     // методы для станций
     public void setNumberStation(int numberStation) {
         if (numberStation > maxStation) {
-            numberStation = 0;
+            numberStation = minStation;
         }
         if (numberStation < minStation) {
-            numberStation = 9;
+            numberStation = maxStation;
         }
 
         this.numberStation = numberStation;

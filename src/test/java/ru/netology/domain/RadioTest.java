@@ -6,17 +6,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RadioTest {
     Radio radio = new Radio();
-    Radio radio2 = new Radio(10);
+
+    @Test
+            void shouldQuantityStation() {
+        Radio radio = new Radio(20);
+        radio.setQuantityStation(15);
+        assertEquals(15, radio.getQuantityStation());
+    }
 
     // Тесты на Станции
+
     @Test
-    void shouldReplaceWithNine() { //недопустимые значения
+    void shouldReplaceWithMaxStation() { //недопустимые значения
         radio.setNumberStation(-10);
         assertEquals(9, radio.getNumberStation());
     }
 
     @Test
-    void shouldReplaceWithZero() {
+    void shouldReplaceWithMinStation() {
         radio.setNumberStation(20);
         assertEquals(0, radio.getNumberStation());
     }
