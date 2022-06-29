@@ -8,10 +8,10 @@ public class RadioTest {
     Radio radio = new Radio();
 
     @Test
-            void shouldQuantityStation() {
+    void shouldQuantityStation() {
         Radio radio = new Radio(20);
-        radio.setQuantityStation(15);
-        assertEquals(15, radio.getQuantityStation());
+        radio.setNumberStation(15);
+        assertEquals(15, radio.getNumberStation());
     }
 
     // Тесты на Станции
@@ -90,9 +90,9 @@ public class RadioTest {
 
     @Test
     void shouldVolumeUp() { // Увеличить на 1
-        radio.setVolume(4);
+        radio.setVolume(30);
         radio.increaseVolume();
-        assertEquals(5, radio.getVolume());
+        assertEquals(31, radio.getVolume());
     }
 
     @Test
