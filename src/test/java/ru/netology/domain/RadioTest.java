@@ -15,11 +15,23 @@ public class RadioTest {
     }
 
     // Тесты на Станции
+    @Test
+    void nextStation() {
+        radio.setNumberStation(9);
+        radio.nextStation();
+        assertEquals(0, radio.getNumberStation());
+    }
 
+    @Test
+    void prevStation() {
+        radio.setNumberStation(0);
+        radio.prevStation();
+        assertEquals(9, radio.getNumberStation());
+    }
     @Test
     void shouldReplaceWithMaxStation() { //недопустимые значения
         radio.setNumberStation(-10);
-        assertEquals(9, radio.getNumberStation());
+        assertEquals(0, radio.getNumberStation());
     }
 
     @Test
@@ -57,7 +69,7 @@ public class RadioTest {
     @Test
     void shouldReplaceLessThanZero() { // Меньше 0
         radio.setNumberStation(-1);
-        assertEquals(9, radio.getNumberStation());
+        assertEquals(0, radio.getNumberStation());
     }
 
     // Тесты на громкость
@@ -84,7 +96,7 @@ public class RadioTest {
     @Test
     void shouldNothingLessThanTheMinimum() { // Минимум -1
         radio.setVolume(0);
-        radio.deIncreaseVolume();
+        radio.decreaseVolume();
         assertEquals(0, radio.getVolume());
     }
 
@@ -98,8 +110,10 @@ public class RadioTest {
     @Test
     void shouldVolumeUDown() { // Уменьшить на 1
         radio.setVolume(7);
-        radio.deIncreaseVolume();
+        radio.decreaseVolume();
         assertEquals(6, radio.getVolume());
     }
+
+
 }
 
