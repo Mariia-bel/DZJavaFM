@@ -2,40 +2,59 @@ package ru.netology.domain;
 
 public class Radio {
     private int numberStation;
+    private int volume;
+    private int maxStation = 9;
+    private int maxVolume = 100;
+
+
+    public Radio() {
+
+    }
+
+    public Radio(int quantityStation)
+    {
+        maxStation = quantityStation -1;
+    }
+
 
     // методы для станций
     public void setNumberStation(int numberStation) {
-        if (numberStation > 9) {
-            numberStation = 0;
+        if (numberStation > maxStation) {
+            return;
         }
         if (numberStation < 0) {
-            numberStation = 9;
+            return;
         }
 
         this.numberStation = numberStation;
     }
 
-    public int getNumberStation() {
+    public int getNumberStation()
+    {
         return numberStation;
     }
 
     public void nextStation() {
-        int stationUp = numberStation + 1;
-        setNumberStation(stationUp);
+       if (numberStation < maxStation){
+           numberStation++;}
+       else {
+           numberStation = 0;
+       }
     }
 
     public void prevStation() {
-        int stationPrev = numberStation - 1;
-        setNumberStation(stationPrev);
+       if (numberStation > 0){
+           numberStation--;
+       }
+       else { numberStation = maxStation;}
     }
 
-    private int volume;
 
     // Методы для громкости
 
     public void setVolume(int volume) {
-        if (volume > 10) {
-            volume = 10;
+        if (volume > maxVolume) {
+           volume = maxVolume;
         }
         if (volume <= 0) {
             return;
@@ -50,15 +69,15 @@ public class Radio {
     }
 
     public void increaseVolume() {
-        if (volume < 10) {
-            int volumeUp = volume + 1;
-            setVolume(volumeUp);
+        if (volume < maxVolume) {
+            volume++;
         }
     }
 
-    public void deIncreaseVolume() {
-        int volumeDown = volume - 1;
-        setVolume(volumeDown);
+    public void decreaseVolume() {
+        if (volume > 0){
+            volume--;
+        }
     }
 
 }
